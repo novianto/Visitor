@@ -2,15 +2,15 @@
 	
 	require_once("includes/db_connection.php");
 	session_start(); 
-
-	$sql = "SELECT username FROM admins";
+		$b = $_SESSION['login'];
+		$sql = "SELECT username FROM admins where username = '$b'";
 		$hasil = mysqli_query($koneksi,$sql);
 		
-		$a = mysqli_num_rows($hasil);
-		for($i=1; $i<=$a; $i++){
+		if(mysqli_num_rows($hasil)==0){
+			header("Location:login.php");
+		}else{
 			$baris = mysqli_fetch_assoc($hasil);
-			if($_SESSION['login'] == $baris['username']){
-				$a = $_SESSION['login'];
+			if($_SESSION['login'] == $baris['username']){	
 ?>
 		<!DOCTYPE html>
 			<html>
@@ -24,7 +24,7 @@
 					<h2>Admin Menu</h2>
 				</div><!--#header-->
 				<div id='konten_admin_menu'>
-					<h2><marquee behavior='ALTERNATE'>Welcome  <?php echo $a; ?></marquee></h2>
+					<h2><marquee behavior='ALTERNATE'>Welcome  <?php echo $b; ?></marquee></h2>
 					<table>
 						<tr>
 							<td>
@@ -43,13 +43,6 @@
 			</body>
 		</html>
 <?php
-	}
-	else{
-		/*echo "<script>";
-		echo "alert('Login gagal, cek kembali username dan password Anda!')";
-		echo "</script>";*/
-		header("Location:login.php");
-		//echo $_SESSION['login'];
-	}
+		}
 }
 ?>
