@@ -1,9 +1,9 @@
 <?php 
-	session_start();
 	require_once("includes/db_connection.php"); 
+	session_start();
 ?>
 
-<?php //filename:login_proses.php
+<?php
 
 	$user = $_POST['USERNAME'];
 	$pass = $_POST['PASSWORD'];
@@ -29,10 +29,11 @@
 			//echo "password cocok";
 			$_SESSION['login'] = $user;
 			header("Location:adminmenu.php");
+			//echo "<br/>".$_SESSION['login']."<br/>".$newpass."<br/>".$baris['password'];
 		}else{
 			//echo "password tidak cocok";
 			header("Location:login.php");
-		}	
+		}
 	}
 ?>
 

@@ -20,6 +20,7 @@
 	$baris = mysqli_fetch_assoc($hasil);
 		
 	if(isset($_POST["SAVE"])){
+		
 		$Id = $_POST["ID"];
 		$User = $_POST["USER"];
 		$User = mysqli_real_escape_string($koneksi,$User);

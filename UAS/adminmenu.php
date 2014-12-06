@@ -1,6 +1,7 @@
 <?php
+	
 	require_once("includes/db_connection.php");
-	session_start();
+	session_start(); 
 
 	$sql = "SELECT username FROM admins";
 		$hasil = mysqli_query($koneksi,$sql);
@@ -48,7 +49,7 @@
 		echo "alert('Login gagal, cek kembali username dan password Anda!')";
 		echo "</script>";*/
 		header("Location:login.php");
-		
+		//echo $_SESSION['login'];
 	}
 }
- ?>
+?>
