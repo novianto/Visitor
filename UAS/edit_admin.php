@@ -18,7 +18,7 @@
 	$hasil = mysqli_query($koneksi,$sql);
 	
 	$baris = mysqli_fetch_assoc($hasil);
-	
+		
 	if(isset($_POST["SAVE"])){
 		$Id = $_POST["ID"];
 		$User = $_POST["USER"];
@@ -28,11 +28,16 @@
 		
 		$Pass = $_POST["PASS"];
 		
-		$Pass = mysqli_real_escape_string($koneksi,$Pass);
+		$format = "$2y$10$";
+		$hash = "TsuxOptrHslaUuweYhcv22";
+		$salt = $format.$hash;
+		
+		$newpass = crypt($Pass,$salt);	
+		$newpass = mysqli_real_escape_string($koneksi,$newpass);
 		
 		$sql = "UPDATE admins SET ";
 		$sql .= "username = '{$User_replace}', ";
-		$sql .= "password = '{$Pass}' ";
+		$sql .= "password = '{$newpass}' ";
 		$sql .= "WHERE id = $Id ";
 		
 		mysqli_query($koneksi,$sql);

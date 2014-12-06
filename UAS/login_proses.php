@@ -17,7 +17,15 @@
 	}else{
 		//echo "Username Ada";
 		$baris = mysqli_fetch_assoc($hasil);
-		if($pass == $baris['password']){
+		
+		$format = "$2y$10$";
+		$hash = "TsuxOptrHslaUuweYhcv22";
+		$salt = $format.$hash;
+	
+		$newpass = crypt($pass,$salt);
+		$newpass = mysqli_real_escape_string($koneksi,$newpass);
+		
+		if($newpass == $baris['password']){
 			//echo "password cocok";
 			$_SESSION['login'] = $user;
 			header("Location:adminmenu.php");

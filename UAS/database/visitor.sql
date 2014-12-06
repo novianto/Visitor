@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 02 Des 2014 pada 12.09
+-- Generation Time: 06 Des 2014 pada 09.47
 -- Versi Server: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -31,16 +31,18 @@ USE `visitor`;
 CREATE TABLE IF NOT EXISTS `admins` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(30) NOT NULL,
-  `password` varchar(30) NOT NULL,
+  `password` varchar(300) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data untuk tabel `admins`
 --
 
 INSERT INTO `admins` (`id`, `username`, `password`) VALUES
-(1, 'novianto', 'rahasia');
+(1, 'novianto', '$2y$10$TsuxOptrHslaUuweYhcv2udyuM.YYhAiivmQZvSF/B4yXSNlHPvfK'),
+(2, 'jesikawati', '$2y$10$TsuxOptrHslaUuweYhcv2udyuM.YYhAiivmQZvSF/B4yXSNlHPvfK'),
+(3, 'victor', '$2y$10$TsuxOptrHslaUuweYhcv2udyuM.YYhAiivmQZvSF/B4yXSNlHPvfK');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
