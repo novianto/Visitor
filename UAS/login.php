@@ -15,12 +15,20 @@
 					<tr>	
 						<td>Username</td>
 						<td> : </td>
+<<<<<<< HEAD
 						<td><input type="text" name="USERNAME" value="" required/></td>
+=======
+						<td><input type="text" name="USERNAME" value=""/></td>
+>>>>>>> origin/master
 					</tr>
 					<tr>
 						<td>Password</td>
 						<td> : </td>
+<<<<<<< HEAD
 						<td><input type="password" name="PASSWORD" value="" required/></td>
+=======
+						<td><input type="password" name="PASSWORD" value=""/></td>
+>>>>>>> origin/master
 					</tr>
 				</table>
 				</div><!--#konten_login-->
