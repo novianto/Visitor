@@ -1,6 +1,7 @@
 /*Filename: admin.css*/
 body{
-	background:rgba(150,255,155,0.8);
+	/*background:rgba(150,255,155,0.8);*/
+	background:grey;
 }
 #bungkus_admin_menu{
 	width:100%;
@@ -114,4 +115,62 @@ body{
 	-ms-transition:all .7s ease-out;
 	-o-transition:all .7s ease-out;
 	transition:all .7s ease-out;
+}
+
+#bungkus_konten_login{
+	width:500px;
+	height:200px;
+	padding:5px;
+	border-radius:250px;
+	background:lightblue;
+	margin:auto;
+}
+#konten_header{
+	background:red;
+	width:300px;
+	margin:auto;
+	margin-top:30px;
+	border-radius:10px;
+	text-align:center;
+	padding-top:5px;
+}
+#konten_login{
+	width:300px;
+	margin:auto;
+}
+#konten_login td{
+	padding:10px;
+}
+#konten_submit{
+	background:red;
+	width:300px;
+	height:30px;
+	border-radius:10px;
+	text-align:center;
+	margin:auto;
+}
+#konten_submit input{
+	margin-top:4px;
+	background:lightblue;
+	-webkit-transition:all .7s ease-out;
+	-moz-transition:all .7s ease-out;
+	-ms-transition:all .7s ease-out;
+	-o-transition:all .7s ease-out;
+	transition:all .7s ease-out;
+	font-weight:bold;
+}
+#konten_submit input:hover{
+	background:yellow;
+	-webkit-transition:all .7s ease-out;
+	-moz-transition:all .7s ease-out;
+	-ms-transition:all .7s ease-out;
+	-o-transition:all .7s ease-out;
+	transition:all .7s ease-out;
+	font-weight:bold;
+}
+#footer{
+	clear:both;
+	margin-top:100px;
+	text-align:center;
+	background:lightblue; color:red;
 }
