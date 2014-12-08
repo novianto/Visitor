@@ -15,12 +15,12 @@
 					<tr>	
 						<td>Username</td>
 						<td> : </td>
-						<td><input type="text" name="USERNAME" value=""/></td>
+						<td><input type="text" name="USERNAME" value="" required/></td>
 					</tr>
 					<tr>
 						<td>Password</td>
 						<td> : </td>
-						<td><input type="password" name="PASSWORD" value=""/></td>
+						<td><input type="password" name="PASSWORD" value="" required/></td>
 					</tr>
 				</table>
 				</div><!--#konten_login-->
