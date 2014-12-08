@@ -1,4 +1,5 @@
 <?php 
+	/*
 	require_once("includes/db_connection.php"); 
 	session_start();
 
@@ -10,6 +11,18 @@
 			$baris = mysqli_fetch_assoc($hasil);
 			if($_SESSION['login'] == $baris['username']){
 				$a = $_SESSION['login'];
+	*/			
+	require_once("includes/db_connection.php");
+	session_start(); 
+		$b = $_SESSION['login'];
+		$sql = "SELECT username FROM admins where username = '$b'";
+		$hasil = mysqli_query($koneksi,$sql);
+		
+		if(mysqli_num_rows($hasil)==0){
+			header("Location:login.php");
+		}else{
+			$baris = mysqli_fetch_assoc($hasil);
+			if($_SESSION['login'] == $baris['username']){			
 ?>
 <?php 
 	if(isset($_GET['ACT'])){
@@ -67,13 +80,17 @@
 	</div><!--#bungkus_manage_admin-->
 <?php include("includes/layouts/footer.php"); ?>
 <?php
+	/*
 	}
 	else{
-		/*echo "<script>";
+		echo "<script>";
 		echo "alert('Login gagal, cek kembali username dan password Anda!')";
-		echo "</script>";*/
+		echo "</script>";
 		header("Location:login.php");
 		
 	}
+}
+*/
+		}
 }
  ?>

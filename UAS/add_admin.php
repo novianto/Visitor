@@ -1,4 +1,5 @@
 <?php 
+	/*
 	require_once("includes/db_connection.php"); 
 	session_start();
 
@@ -10,20 +11,37 @@
 			$baris = mysqli_fetch_assoc($hasil);
 			if($_SESSION['login'] == $baris['username']){
 				$a = $_SESSION['login'];
+	*/
+	require_once("includes/db_connection.php");
+	session_start(); 
+		$b = $_SESSION['login'];
+		$sql = "SELECT username FROM admins where username = '$b'";
+		$hasil = mysqli_query($koneksi,$sql);
+		
+		if(mysqli_num_rows($hasil)==0){
+			header("Location:login.php");
+		}else{
+			$baris = mysqli_fetch_assoc($hasil);
+			if($_SESSION['login'] == $baris['username']){
 ?>
 <?php
 	if(isset($_POST["ADD"])){
 		$User = $_POST["USER"];
-		$Pass = $_POST["PASS"];
-		
 		$User = mysqli_real_escape_string($koneksi,$User);
-		$Pass = mysqli_real_escape_string($koneksi,$Pass);
 		
 		$User_replace = str_replace(" ","",$User);
 		
+		$Pass = $_POST["PASS"];
+		$format = "$2y$10$";
+		$hash = "TsuxOptrHslaUuweYhcv22";
+		$salt = $format.$hash;
+		
+		$newpass = crypt($Pass,$salt);	
+		$newpass = mysqli_real_escape_string($koneksi,$newpass);
+		
 		$sql = "INSERT INTO admins ";
 		$sql .= "(username, password) ";
-		$sql .= "VALUES ('{$User}','{$Pass}')";
+		$sql .= "VALUES ('{$User_replace}','{$newpass}')";
 		
 		mysqli_query($koneksi, $sql);
 		header("Location:manage_admin.php");
@@ -59,13 +77,17 @@
 	</div><!--#bungkus_add_admin-->
 <?php include("includes/layouts/footer.php"); ?>
 <?php
+	/*
 	}
 	else{
-		/*echo "<script>";
+		echo "<script>";
 		echo "alert('Login gagal, cek kembali username dan password Anda!')";
-		echo "</script>";*/
+		echo "</script>";
 		header("Location:login.php");
 		
 	}
+}
+*/
+		}
 }
  ?>
