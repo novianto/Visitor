@@ -1,17 +1,4 @@
-<?php 
-	/*
-	require_once("includes/db_connection.php"); 
-	session_start();
-
-	$sql = "SELECT username FROM admins";
-		$hasil = mysqli_query($koneksi,$sql);
-		
-		$a = mysqli_num_rows($hasil);
-		for($i=1; $i<=$a; $i++){
-			$baris = mysqli_fetch_assoc($hasil);
-			if($_SESSION['login'] == $baris['username']){
-				$a = $_SESSION['login'];
-	*/			
+<?php 	
 	require_once("includes/db_connection.php");
 	session_start(); 
 		$b = $_SESSION['login'];
@@ -80,17 +67,6 @@
 	</div><!--#bungkus_manage_admin-->
 <?php include("includes/layouts/footer.php"); ?>
 <?php
-	/*
-	}
-	else{
-		echo "<script>";
-		echo "alert('Login gagal, cek kembali username dan password Anda!')";
-		echo "</script>";
-		header("Location:login.php");
-		
-	}
-}
-*/
 		}
 }
  ?>
