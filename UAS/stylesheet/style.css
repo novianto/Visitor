@@ -1,0 +1,97 @@
+/*style.css*/
+
+
+body{
+	margin:0;
+	padding:0;
+}
+
+#bungkus {
+	margin :0;
+	padding:0;
+}
+
+#header{
+	margin:0 auto;
+	background:red;
+	height:150px;
+	width:1000px;
+}
+
+#logo{
+	height:100%;
+	width:20%;
+	float:left;
+	background:white;
+
+}
+
+#nama{
+	height:100%;
+	width:80%;
+	float:right;
+}
+
+.content{
+	margin:0 auto;
+	background:lightgreen;
+	height:800px;
+	width:1000px;
+}
+
+#content1{
+	width:30%;
+	height:100%;
+	background:yellow;
+	float:left;
+
+}
+
+#content1 ul {
+	margin-left:0;
+	padding-left:0;
+
+}
+
+#content1 ul li{
+	margin-left:0;
+	margin-right:40px;
+	padding:20px;
+	list-style:none;
+	border: 1px solid;
+	border-radius:10%;	
+}
+
+#content1 ul li a{
+	text-decoration:none;	
+	color:#000000;
+}
+
+#content2{
+	width:70%;
+	height:100%;
+	background:blue;
+	float:right;
+}
+
+#footer{
+	margin:0 auto;
+	background:black;
+	height:200px;
+	width:1000px;
+}
+
+#slide{
+	margin: 0 auto;
+	width:400px;
+	height:400px;
+	background-color:blue;
+	border:2px solid;
+	border-radius: 20%;
+}
+
+#next{
+	width:200px;
+	margin-left: 180px;
+	background-color: yellow;
+}

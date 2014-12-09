@@ -14,7 +14,10 @@
 
 	if(mysqli_num_rows($hasil)==0){//kalau hasil query tidak ada yg cocok dengan yang di form
 		//echo "Username Tidak ditemukan";
-		header("Location:login.php");
+		echo "<script>";
+			echo "alert('Login gagal, cek kembali username dan password Anda!');";
+			echo "window.location.href = 'login.php';";
+			echo "</script>";
 	}else{
 		//echo "Username Ada";
 		$baris = mysqli_fetch_assoc($hasil);
