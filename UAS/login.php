@@ -12,6 +12,11 @@
 			<form action="login_proses.php" method="post">
 				<div id="konten_login">
 				<table>
+					<tr>
+						<td colspan="2">
+							<span id="clock"><?php print date('H:i:s'); ?></span>						
+						</td>
+					</tr>
 					<tr>	
 						<td>Username</td>
 						<td> : </td>
