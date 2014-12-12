@@ -40,12 +40,12 @@
 			<h2>Edit GALLERY</h2>
 		</div><!--#header-->
 		<div id="konten_edit_gal">
-			<form action="edit_gal.php" method="post">
+			<form action="editgal.php" method="post">
 				<table>
 					<tr>
 						<td>GAMBAR</td>
 						<td> :</td>
-						<td><input type="text" name="gal" value="<?php echo $baris['gambar']; ?>" />
+						<td><input type="file" name="gal" value="<?php echo $baris['gambar']; ?>" />
 					</tr>
 					<tr>
 						<td>Judul</td>
